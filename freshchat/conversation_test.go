@@ -8,6 +8,8 @@ import (
 	"github.com/toanppp/freshgo/freshchat"
 )
 
+var conversationID string
+
 func TestFreshchat_CreateConversation(t *testing.T) {
 	f := freshchat.New(url, accessToken)
 	resp, err := f.CreateConversation(context.Background(), freshchat.Conversation{
@@ -35,6 +37,7 @@ func TestFreshchat_CreateConversation(t *testing.T) {
 	if err != nil {
 		t.Fatalf("an error occurred: %v", err)
 	}
+	conversationID = resp.ConversationID
 	fmt.Printf("%+v\n", resp)
 }
 
