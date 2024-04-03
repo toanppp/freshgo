@@ -25,11 +25,12 @@ jobs:
     - name: Build
       run: go build -v ./...
 
-    - name: Secret
+    - name: Test
       env:
           FRESHCHAT_URL: ${{ secrets.FRESHCHAT_URL }}
-      run:
-          echo $FRESHCHAT_URL
-
-    - name: Test
+          FRESHCHAT_ACCESS_TOKEN: ${{ secrets.FRESHCHAT_ACCESS_TOKEN }}
+          FRESHCHAT_USER_ID: ${{ secrets.FRESHCHAT_USER_ID }}
+          FRESHCHAT_AGENT_ID: ${{ secrets.FRESHCHAT_AGENT_ID }}
+          FRESHCHAT_CHANNEL_ID: ${{ secrets.FRESHCHAT_CHANNEL_ID }}
+          FRESHCHAT_CONVERSATION_ID: ${{ secrets.FRESHCHAT_CONVERSATION_ID }}
       run: go test -v ./...
