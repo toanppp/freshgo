@@ -2,7 +2,7 @@
 
 Freshworks Golang APIs
 
-# To do
+## To do
 
 - [x] [Freshchat](https://developers.freshchat.com/)
     - [x] User
@@ -10,13 +10,13 @@ Freshworks Golang APIs
     - [x] Conversation
 - [ ] Freshdesk
 
-# Install
+## Install
 
 ```sh
 go get github.com/toanppp/freshgo
 ```
 
-# Example
+## Example
 
 ```go
 package main
